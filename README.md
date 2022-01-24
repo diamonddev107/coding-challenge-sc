@@ -1,9 +1,15 @@
-# coding-challenge-sc
-Coding challenge for hiring Smart Contract developer
+# Basic Sample Hardhat Project
 
-## Instruction
-* Follow [this](./instruction.md)
-* Development: Don't fork the repo, but clone it `>>` Upload privately in Github `>>` Share the repo with [`abhi3700`](https://github.com/abhi3700) `>>` intimate the team member with repo url.
-* Deliver: Create a demo video showcasing these in sequence:
-	- Run unit testing
-	- Start a localnet >> Deployment of each versions in sequence which can only be done by the owner.
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
