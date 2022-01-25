@@ -11,19 +11,23 @@ describe("=== Test Avg Price ===", function () {
   let contractOwner
   let testToken
   let mock
+  let base
   before(async function () {
     accounts = await ethers.getSigners()
     contractOwner = accounts[0]
     const Mock = await ethers.getContractFactory("MockBep20");
     mock = await Mock.deploy()
     await mock.deployed()
-    
+    base = new Date("2022-01-01T08:00:00")
+
   })
 
   it("Check V1", async () => {
     addr = await deployV1()
     console.log("V1 deployed to ", addr)
     const avg1 = await ethers.getContractAt("TokenavgpriceV1", addr)
+    let time1 = Date.now() - base
+    console.log(time1)
     await avg1.connect(contractOwner).setDayPrice(mock.address, 22);
     expect(await avg1.getDayPrice(mock.address, 0)).to.be.equal(22);
 
